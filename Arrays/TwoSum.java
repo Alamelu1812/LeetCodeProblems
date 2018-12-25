@@ -35,10 +35,16 @@ public class TwoSum {
 	public static void main(String[] args) {
 		TwoSum object = new TwoSum();
 		int[] nums = {1,2,4,7,8,9};
+		
+		//TestCase1
 		int[] result1 = object.computeTwoSum(nums,3);
 		System.out.println(result1[0]+" "+result1[1]);
+		
+		//TestCase2
 		int[] result2 = object.computeTwoSum(nums,4);
 		System.out.println(result2[0]+" "+result2[1]);
+		
+		//TestCase3
 		int[] result3 = object.computeTwoSum(nums,11);
 		System.out.println(result3[0]+" "+result3[1]);
 	}
