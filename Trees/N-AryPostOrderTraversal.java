@@ -1,15 +1,3 @@
-class Solution {
-    List<Integer> result = new ArrayList<Integer>();
-    public List<Integer> postorder(Node root) {
-        if(root!=null){
-            for(Node child:root.children)
-                postorder(child);
-            result.add(root.val);
-        }
-        return result;
-    }
-}
-
 /*
 // Definition for a Node.
 class Node {
@@ -24,3 +12,17 @@ class Node {
     }
 };
 */
+
+class Solution {
+    List<Integer> result = new ArrayList<Integer>();
+    public List<Integer> postorder(Node root) {
+        if(root!=null){
+            for(Node child:root.children)
+                postorder(child);
+            result.add(root.val);
+        }
+        return result;
+    }
+}
+
+
