@@ -1,0 +1,34 @@
+class Solution {
+    public TreeNode sortedListToBST(ListNode head) {
+        if(head == null)
+            return null;
+            
+        //FindMiddle
+        ListNode prevSlow = null;
+        ListNode slow = head;
+        ListNode fast = head;
+        while(slow!=null && fast!=null && fast.next!=null){
+            prevSlow = slow;
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+        
+        //Terminate the left half of the list
+        if(prevSlow!=null)
+            prevSlow.next = null;
+            
+        //Create tree node using middle element
+        TreeNode root = new TreeNode(slow.val);
+        
+        //If the middle element is the head, then the list has only one element and the root is returned
+        if(slow == head)
+            return root;
+            
+        //Populate left and right of root
+        root.left = sortedListToBST(head);
+        root.right = sortedListToBST(slow.next);
+        
+        //Return root
+        return root;
+    }
+}
