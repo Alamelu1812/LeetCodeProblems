@@ -23,18 +23,25 @@ class Solution {
             return result;
         
         queue.add(root);
+     
         while(!queue.isEmpty()){
             int n = queue.size();
+         
             List<Integer> list = new ArrayList<Integer>();
+         
             for(int i=0;i<n;i++){
                 TreeNode currNode = queue.poll();
+             
                 list.add(currNode.val);
+             
                 if(currNode.left != null)
                     queue.add(currNode.left);
+             
                 if(currNode.right != null)
                     queue.add(currNode.right);
             }
             result.addFirst(list);
+         
         }
         return result;
     }
